@@ -53,7 +53,7 @@ def get_tags(repo):
             'Authorization': 'Bearer {}'.format(token)
         },
         json=True
-    ).json()['tags']
+    ).json().get('tags', [])
     return tags
 
 
