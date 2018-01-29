@@ -25,7 +25,9 @@ RUN apt-get update && \
     libssl-dev \
     libffi6 \
     libffi-dev \
-    llvm
+    llvm \
+    clang-3.8 \
+    vim
 
 RUN pip install --upgrade pip
 
