@@ -93,6 +93,10 @@ def main():
         build(base, repo_tag)
         if os.environ["CIRCLE_BRANCH"] == "master":
             push(repo_tag)
+            # Push the latest tag too
+            latest_tag = ":".join((repo, 'latest'))
+            build(base, latest_tag)
+            push(latest_tag)
 
         # err on the side of removing everything for now
         p = subprocess.Popen(["docker", "rmi", repo_tag], stdout=PIPE)
