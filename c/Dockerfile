@@ -30,5 +30,4 @@ RUN apt-get update && \
 RUN pip install --upgrade pip
 
 RUN pip install setuptools
-RUN pip install future cryptography pyopenssl ndg-httpsclient pyasn1 nelson
-
+RUN pip install future cryptography pyopenssl ndg-httpsclient pyasn1
