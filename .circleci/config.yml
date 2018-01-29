@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.5
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker Images
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker login -u $DOCKER_USER -p $DOCKER_PASS;
+            else
+              echo "Not deploying on pull request";
+            fi
+            pip install --user -r requirements.txt
+            python -u build.py
