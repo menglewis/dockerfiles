@@ -27,6 +27,7 @@ RUN apt-get update && \
     libffi-dev \
     llvm \
     clang-3.8 \
+    gdb \
     vim
 
 RUN pip install --upgrade pip
