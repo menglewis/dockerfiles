@@ -28,7 +28,10 @@ RUN apt-get update && \
     llvm \
     clang-3.8 \
     gdb \
-    vim
+    vim \
+    dos2unix \
+    bsdmainutils \
+    netcat
 
 RUN pip install --upgrade pip
 
